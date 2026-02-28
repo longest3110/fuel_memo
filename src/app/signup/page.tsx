@@ -18,13 +18,13 @@ export default function SignupPage() {
 
     // Validate passwords match
     if (password !== confirmPassword) {
-      setError('Passwords do not match');
+      setError('パスワードが一致しません');
       return;
     }
 
     // Validate password length (Firebase default is 6 characters)
     if (password.length < 6) {
-      setError('Password must be at least 6 characters long');
+      setError('パスワードは6文字以上で入力してください');
       return;
     }
 
@@ -34,7 +34,7 @@ export default function SignupPage() {
       await signUp(email, password);
       router.push('/');
     } catch (err) {
-      setError('Failed to sign up. Please try again.');
+      setError('登録に失敗しました。もう一度お試しください。');
       console.error(err);
     } finally {
       setIsLoading(false);
@@ -44,7 +44,7 @@ export default function SignupPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <div className="w-full max-w-md px-8 py-16">
-        <h1 className="mb-8 text-3xl font-semibold text-black dark:text-zinc-50">Sign up</h1>
+        <h1 className="mb-8 text-3xl font-semibold text-black dark:text-zinc-50">会員登録</h1>
         {error && (
           <div className="mb-4 rounded-md bg-red-50 p-4 text-sm text-red-600 dark:bg-red-900/20">
             {error}
@@ -56,7 +56,7 @@ export default function SignupPage() {
               htmlFor="email"
               className="block text-sm font-medium leading-6 text-zinc-900 dark:text-zinc-50"
             >
-              Email address
+              メールアドレス
             </label>
             <div className="mt-2">
               <input
@@ -77,7 +77,7 @@ export default function SignupPage() {
               htmlFor="password"
               className="block text-sm font-medium leading-6 text-zinc-900 dark:text-zinc-50"
             >
-              Password
+              パスワード
             </label>
             <div className="mt-2">
               <input
@@ -98,7 +98,7 @@ export default function SignupPage() {
               htmlFor="confirmPassword"
               className="block text-sm font-medium leading-6 text-zinc-900 dark:text-zinc-50"
             >
-              Confirm password
+              パスワード（確認）
             </label>
             <div className="mt-2">
               <input
@@ -119,13 +119,13 @@ export default function SignupPage() {
             disabled={isLoading}
             className="flex w-full justify-center rounded-md bg-foreground px-3 py-2 text-sm font-semibold text-background transition-colors hover:bg-[#383838] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 dark:hover:bg-[#ccc]"
           >
-            {isLoading ? 'Signing up...' : 'Sign up'}
+            {isLoading ? '登録中...' : '会員登録'}
           </button>
         </form>
         <p className="mt-6 text-center text-sm text-zinc-600 dark:text-zinc-400">
-          Already have an account?{' '}
+          すでにアカウントをお持ちですか？{' '}
           <a href="/login" className="font-medium text-foreground hover:text-zinc-800 dark:hover:text-zinc-200">
-            Sign in
+            ログイン
           </a>
         </p>
       </div>

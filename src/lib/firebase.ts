@@ -1,5 +1,16 @@
 import { initializeApp, getApps, FirebaseApp } from 'firebase/app';
 import { getAuth, Auth } from 'firebase/auth';
+import {
+  getFirestore,
+  Firestore,
+  collection,
+  addDoc,
+  setDoc,
+  doc,
+  query,
+  where,
+  getDocs,
+} from 'firebase/firestore';
 
 // Firebase configuration from environment variables
 const firebaseConfig = {
@@ -11,6 +22,7 @@ const firebaseConfig = {
 // Initialize Firebase (singleton pattern)
 let firebaseApp: FirebaseApp;
 let auth: Auth;
+let firestoreDb: Firestore;
 
 if (!getApps().length) {
   firebaseApp = initializeApp(firebaseConfig);
@@ -19,5 +31,6 @@ if (!getApps().length) {
 }
 
 auth = getAuth(firebaseApp);
+firestoreDb = getFirestore(firebaseApp,"fuel-memo");
 
-export { firebaseApp, auth };
+export { firebaseApp, auth, firestoreDb, collection, addDoc, setDoc, doc, query, where, getDocs };

@@ -1,7 +1,9 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',
+  basePath: '/fuel_memo',
+  assetPrefix: '/fuel_memo/',
 };
 
 export default nextConfig;

@@ -26,21 +26,6 @@ function formatDate(date: Date): string {
   return `${month}/${day}`;
 }
 
-/**
- * Calculate fuel economy (km/L) for an entry
- */
-function calculateFuelEconomy(entry: Entry): number | null {
-  if (entry.fuelAmount <= 0) return null;
-  return entry.distanceSinceLastRefuel / entry.fuelAmount;
-}
-
-/**
- * Format tooltip label
- */
-function formatTooltipLabel(label: any): string {
-  return formatDate(new Date(label));
-}
-
 export default function FuelAmountChart({ entries }: FuelAmountChartProps) {
   // Sort entries by date and prepare data for chart
   const data = entries

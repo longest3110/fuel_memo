@@ -18,7 +18,7 @@ interface EntryWithId extends Entry {
 }
 
 export default function Home() {
-  const { user, isAuthenticated, isLoading } = useAuth();
+  const { user, isAuthenticated, isLoading, signOut } = useAuth();
   const router = useRouter();
   const [entries, setEntries] = useState<EntryWithId[]>([]);
   const [isLoadingEntries, setIsLoadingEntries] = useState(false);
@@ -197,7 +197,7 @@ export default function Home() {
         )}
 
         {entries.length === 0 && (
-          <div className="text-center py-16 bg-white dark:bg-zinc-800 rounded-lg border border-dashed border-zinc-300 dark:border-zinc-700">
+          <div className="mb-8 text-center py-16 bg-white dark:bg-zinc-800 rounded-lg border border-dashed border-zinc-300 dark:border-zinc-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -219,6 +219,15 @@ export default function Home() {
             </p>
           </div>
         )}
+
+        <div className="flex items-center justify-center">
+          <button
+            onClick={() => signOut()}
+            className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-center"
+          >
+            ログアウト
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -124,7 +124,10 @@ export default function SignupPage() {
         </form>
         <p className="mt-6 text-center text-sm text-zinc-600 dark:text-zinc-400">
           すでにアカウントをお持ちですか？{' '}
-          <a href="/login" className="font-medium text-foreground hover:text-zinc-800 dark:hover:text-zinc-200">
+          <a
+            href="/login"
+            className="font-medium text-foreground hover:text-zinc-800 dark:hover:text-zinc-200"
+          >
             ログイン
           </a>
         </p>

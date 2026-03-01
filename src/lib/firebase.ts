@@ -10,6 +10,9 @@ import {
   query,
   where,
   getDocs,
+  orderBy,
+  deleteDoc,
+  limit,
 } from 'firebase/firestore';
 
 // Firebase configuration from environment variables
@@ -31,6 +34,20 @@ if (!getApps().length) {
 }
 
 auth = getAuth(firebaseApp);
-firestoreDb = getFirestore(firebaseApp,"fuel-memo");
+firestoreDb = getFirestore(firebaseApp, 'fuel-memo');
 
-export { firebaseApp, auth, firestoreDb, collection, addDoc, setDoc, doc, query, where, getDocs };
+export {
+  firebaseApp,
+  auth,
+  firestoreDb,
+  collection,
+  addDoc,
+  setDoc,
+  doc,
+  query,
+  where,
+  getDocs,
+  orderBy,
+  deleteDoc,
+  limit,
+};

@@ -97,7 +97,10 @@ export default function LoginPage() {
         </form>
         <p className="mt-6 text-center text-sm text-zinc-600 dark:text-zinc-400">
           アカウントをお持ちでないですか？{' '}
-          <a href="/signup" className="font-medium text-foreground hover:text-zinc-800 dark:hover:text-zinc-200">
+          <a
+            href="/signup"
+            className="font-medium text-foreground hover:text-zinc-800 dark:hover:text-zinc-200"
+          >
             登録する
           </a>
         </p>

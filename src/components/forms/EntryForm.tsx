@@ -87,9 +87,7 @@ export default function EntryForm({ onSuccess, onCancel }: EntryFormProps) {
 
   return (
     <div className="w-full max-w-md mx-auto px-8 py-16">
-      <h1 className="mb-8 text-3xl font-semibold text-black dark:text-zinc-50">
-        給油データ入力
-      </h1>
+      <h1 className="mb-8 text-3xl font-semibold text-black dark:text-zinc-50">給油データ入力</h1>
 
       {error && (
         <div className="mb-4 rounded-md bg-red-50 p-4 text-sm text-red-600 dark:bg-red-900/20">

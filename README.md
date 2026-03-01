@@ -28,6 +28,7 @@ NEXT_PUBLIC_APP_ID=your_app_id
 ```
 
 To get these values:
+
 1. Go to [Firebase Console](https://console.firebase.google.com/)
 2. Select your project (or create a new one)
 3. Go to Project Settings > General
